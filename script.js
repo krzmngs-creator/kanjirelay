@@ -47,8 +47,11 @@ document.getElementById("startGame").addEventListener("click",()=>{
   }
   if(players.length<2){alert("名前を入力してください"); return;}
 
-  answerer = 0;
-  currentPlayer = (answerer+1)%players.length;
+  // ★ 回答者をランダムに選ぶ
+  answerer = Math.floor(Math.random() * players.length);
+
+  // 最初の書き手
+  currentPlayer = (answerer + 1) % players.length;
   numDraws = 0;
   savedImages = [];
 
@@ -121,8 +124,8 @@ document.getElementById("clearBtn").addEventListener("click",()=>{ctx.clearRect(
 
 // --- タイマー ---
 function startTimer(){
+  if(timerId) clearInterval(timerId); // 古いタイマーを消す
   timeLeft=10; canDraw=true; document.getElementById("timer").textContent=timeLeft;
-  if(timerId) clearInterval(timerId);
   timerId=setInterval(()=>{
     timeLeft--;
     document.getElementById("timer").textContent=timeLeft;
@@ -132,6 +135,7 @@ function startTimer(){
 
 // --- 次の人ボタン ---
 document.getElementById("nextBtn").addEventListener("click",()=>{
+  if(timerId) clearInterval(timerId);  // 古いタイマーを消す
   saveCanvas();
   numDraws++;
   if(numDraws>=maxDraws){
@@ -177,7 +181,7 @@ function showAnswererScreen(){
   document.getElementById("result").textContent="";
 }
 
-// --- ひらがな判定関数（カタカナ→ひらがな） ---
+// --- ひらがな判定関数 ---
 function toHiragana(str){
   const kanaToHira = str.replace(/[\u30a1-\u30f6]/g, function(ch){
     return String.fromCharCode(ch.charCodeAt(0) - 0x60);
@@ -199,20 +203,29 @@ document.getElementById("submitAnswer").addEventListener("click",()=>{
 
 // --- もう一度遊ぶ ---
 document.getElementById("playAgain").addEventListener("click",()=>{
+  // 書き手画面・回答者画面を隠す
+  document.getElementById("writingScreen").style.display="none";
   document.getElementById("answererScreen").style.display="none";
+
+  // 前回の内容をクリア
   document.getElementById("answerInput").value="";
   document.getElementById("result").textContent="";
   document.getElementById("answererImages").innerHTML="";
   document.getElementById("answererName").textContent="";
   document.getElementById("passMsg").textContent="";
 
-  document.getElementById("writingScreen").style.display="block";
-
   numDraws = 0;
   savedImages = [];
-  currentPlayer = (answerer+1)%players.length;
 
+  // ★ 回答者をランダムに再選択
+  answerer = Math.floor(Math.random() * players.length);
+  currentPlayer = (answerer + 1) % players.length;
+
+  // ★ お題も新しくランダム
   currentTopic = topics[Math.floor(Math.random()*topics.length)];
 
-  nextTurn();
+  // ★ 準備画面を表示
+  document.getElementById("prepareScreen").style.display="block";
+  document.getElementById("answererInfo").textContent=
+    `${players[answerer]}さんが回答者です。${players[currentPlayer]}さんにスマホを渡してください！`;
 });
