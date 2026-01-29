@@ -7,6 +7,7 @@ body {
 canvas {
   border: 2px solid #333;
   touch-action: none;
+  -webkit-tap-highlight-color: transparent;
   cursor: crosshair;
   width: 90vw;
   height: 90vw;
@@ -22,7 +23,7 @@ button {
   border-radius: 8px;
 }
 
-#turn {
+#turn, #answererName, #answererInfo {
   font-size: 22px;
   margin: 10px 0;
   font-weight: bold;
@@ -36,4 +37,10 @@ button {
 #answererImages img {
   width: 90px;
   margin: 5px;
+}
+
+#answererScreen p, #prepareScreen p {
+  font-size: 20px;
+  margin: 5px 0 15px 0;
+  font-weight: bold;
 }
