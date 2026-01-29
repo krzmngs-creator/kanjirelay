@@ -8,32 +8,45 @@
 <body>
   <h1>漢字リレー</h1>
 
-  <!-- 人数選択 -->
+  <!-- 1. 人数選択 -->
   <label>人数：
     <select id="numPlayers">
-      <option value="2">2</option>
+      <option value="2" selected>2</option>
       <option value="3">3</option>
       <option value="4">4</option>
     </select>
   </label>
 
-  <!-- 名前入力 -->
+  <!-- 1. 名前入力 -->
   <div id="nameInputs"></div>
   <button id="startGame">スタート</button>
 
-  <h2 id="turn"></h2>
-  <div id="timer">10</div>
+  <!-- 3. 誰が回答者か表示 -->
+  <div id="prepareScreen" style="display:none">
+    <h2 id="answererInfo"></h2>
+    <button id="goToWriting">スタート</button>
+  </div>
 
-  <!-- キャンバス -->
-  <canvas id="canvas"></canvas>
-  <br>
-  <button id="clearBtn">消す</button>
-  <button id="nextBtn">次の人へ</button>
+  <!-- 4-5. お題とキャンバス -->
+  <div id="writingScreen" style="display:none">
+    <h2 id="turn"></h2>
+    <p id="topic"></p>
+    <div id="timer">10</div>
+    <canvas id="canvas"></canvas>
+    <br>
+    <button id="clearBtn">消す</button>
+    <button id="nextBtn">次の人へ</button>
+  </div>
 
-  <!-- 回答者画面 -->
+  <!-- 6. 回答者画面 -->
   <div id="answererScreen" style="display:none">
-    <h2>回答者の画面</h2>
+    <h2 id="answererName"></h2>
+    <p id="passMsg"></p>
     <div id="answererImages"></div>
+    <input type="text" id="answerInput" placeholder="ひらがなで回答">
+    <button id="submitAnswer">回答する</button>
+    <p id="result"></p>
+    <button id="playAgain">もう一度遊ぶ</button>
   </div>
 
   <script src="script.js"></script>
