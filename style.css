@@ -1,13 +1,13 @@
 /* --- 全体文字・見やすく --- */
 body {
-  font-size: 18px;       /* 少し大きめに */
-  padding: 10px;
+  font-size: 22px;       /* 文字をさらに大きく */
+  padding: 12px;
 }
 
 /* --- タイトル --- */
 h1 {
-  font-size: 28px;       /* タイトルも大きめ */
-  margin-bottom: 15px;
+  font-size: 36px;       /* タイトル大きめ */
+  margin-bottom: 20px;
 }
 
 /* --- 準備画面（人数選択・名前入力・ボタン） --- */
@@ -16,34 +16,34 @@ h1 {
 #prepareScreen input,
 #prepareScreen button,
 #goToWriting {
-  font-size: 18px;
-  margin: 5px 0;
-  padding: 8px 12px;
+  font-size: 22px;
+  margin: 8px 0;
+  padding: 12px 16px;
 }
 
 /* --- 書き手画面 --- */
 #writingScreen h2,
 #writingScreen p,
 #writingScreen button {
-  font-size: 18px;
+  font-size: 22px;
 }
 
 #timer {
-  font-size: 24px;
+  font-size: 28px;
   font-weight: bold;
-  margin: 10px 0;
+  margin: 12px 0;
 }
 
 /* --- キャンバス --- */
 canvas {
-  border: 2px solid #333;
+  border: 3px solid #333;
   touch-action: none;
   cursor: crosshair;
-  width: 90vw;    /* 画面幅の90% */
-  height: 90vw;   /* 正方形 */
-  max-width: 400px;
-  max-height: 400px;
-  margin-bottom: 10px;
+  width: 95vw;    /* 画面幅の95% */
+  height: 95vw;   /* 正方形 */
+  max-width: 450px;
+  max-height: 450px;
+  margin-bottom: 12px;
 }
 
 /* --- 回答者画面 --- */
@@ -51,27 +51,35 @@ canvas {
 #answererScreen p,
 #answererScreen button,
 #answererScreen input {
-  font-size: 18px;
+  font-size: 22px;
 }
 
 #answererImages img {
-  width: 30vw;   /* 画面幅に応じて調整 */
-  max-width: 100px;
-  margin: 5px;
+  width: 40vw;   /* 画面幅に応じて大きく */
+  max-width: 120px;
+  margin: 6px;
 }
 
 /* --- iPhone用調整 --- */
 @media screen and (max-width: 500px) {
-  body { font-size: 20px; }
-  h1 { font-size: 32px; }
+  body { font-size: 24px; }
+  h1 { font-size: 40px; }
   #writingScreen h2,
   #answererScreen h2 {
-    font-size: 22px;
+    font-size: 26px;
   }
   #writingScreen button,
   #answererScreen button,
   #prepareScreen button {
-    font-size: 20px;
-    padding: 10px 16px;
+    font-size: 24px;
+    padding: 14px 20px;
+  }
+  canvas {
+    width: 97vw;
+    height: 97vw;
+  }
+  #answererImages img {
+    width: 45vw;
+    max-width: 130px;
   }
 }
