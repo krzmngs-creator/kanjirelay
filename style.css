@@ -1,46 +1,50 @@
 body {
   text-align: center;
   font-family: sans-serif;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
+
+h1 { font-size: 28px; margin: 15px 0; }
+h2 { font-size: 24px; margin: 10px 0; }
+
+#prepareScreen, #writingScreen, #answererScreen {
   padding: 10px;
+}
+
+select, input, button {
+  font-size: 18px;
+  padding: 10px 15px;
+  margin: 8px;
+  border-radius: 8px;
+}
+
+#timer {
+  font-size: 24px;
+  font-weight: bold;
+  margin: 10px 0;
 }
 
 canvas {
   border: 2px solid #333;
-  touch-action: none;
-  -webkit-tap-highlight-color: transparent;
   cursor: crosshair;
-  width: 90vw;
-  height: 90vw;
-  max-width: 400px;
-  max-height: 400px;
-  margin: 10px 0;
-}
-
-button {
-  font-size: 18px;
-  padding: 12px 20px;
-  margin: 5px;
-  border-radius: 8px;
-}
-
-#turn, #answererName, #answererInfo {
-  font-size: 22px;
-  margin: 10px 0;
-  font-weight: bold;
-}
-
-#timer {
-  font-size: 28px;
-  font-weight: bold;
+  touch-action: none;
+  display: block;
+  margin: 0 auto 10px auto;
+  max-width: 90vw;
+  height: auto;
+  border-radius: 10px;
 }
 
 #answererImages img {
-  width: 90px;
+  max-width: 30%;
   margin: 5px;
+  border: 2px solid #333;
+  border-radius: 8px;
 }
 
-#answererScreen p, #prepareScreen p {
-  font-size: 20px;
-  margin: 5px 0 15px 0;
-  font-weight: bold;
-}
+#topic { font-size: 20px; font-weight: bold; margin: 10px 0; }
+#turn { color: #d33; font-weight: bold; }
+#answererName { color: #33a; font-weight: bold; }
+#passMsg { font-weight: bold; color: #555; }
