@@ -1,23 +1,31 @@
+/* --- 全体文字・見やすく --- */
 body {
-  text-align: center;
-  font-family: sans-serif;
-  margin: 0;
-  padding: 0;
-  overflow-x: hidden;
-}
-
-h1 { font-size: 28px; margin: 15px 0; }
-h2 { font-size: 24px; margin: 10px 0; }
-
-#prepareScreen, #writingScreen, #answererScreen {
+  font-size: 18px;       /* 少し大きめに */
   padding: 10px;
 }
 
-select, input, button {
+/* --- タイトル --- */
+h1 {
+  font-size: 28px;       /* タイトルも大きめ */
+  margin-bottom: 15px;
+}
+
+/* --- 準備画面（人数選択・名前入力・ボタン） --- */
+#prepareScreen label,
+#prepareScreen select,
+#prepareScreen input,
+#prepareScreen button,
+#goToWriting {
   font-size: 18px;
-  padding: 10px 15px;
-  margin: 8px;
-  border-radius: 8px;
+  margin: 5px 0;
+  padding: 8px 12px;
+}
+
+/* --- 書き手画面 --- */
+#writingScreen h2,
+#writingScreen p,
+#writingScreen button {
+  font-size: 18px;
 }
 
 #timer {
@@ -26,25 +34,44 @@ select, input, button {
   margin: 10px 0;
 }
 
+/* --- キャンバス --- */
 canvas {
   border: 2px solid #333;
-  cursor: crosshair;
   touch-action: none;
-  display: block;
-  margin: 0 auto 10px auto;
-  max-width: 90vw;
-  height: auto;
-  border-radius: 10px;
+  cursor: crosshair;
+  width: 90vw;    /* 画面幅の90% */
+  height: 90vw;   /* 正方形 */
+  max-width: 400px;
+  max-height: 400px;
+  margin-bottom: 10px;
+}
+
+/* --- 回答者画面 --- */
+#answererScreen h2,
+#answererScreen p,
+#answererScreen button,
+#answererScreen input {
+  font-size: 18px;
 }
 
 #answererImages img {
-  max-width: 30%;
+  width: 30vw;   /* 画面幅に応じて調整 */
+  max-width: 100px;
   margin: 5px;
-  border: 2px solid #333;
-  border-radius: 8px;
 }
 
-#topic { font-size: 20px; font-weight: bold; margin: 10px 0; }
-#turn { color: #d33; font-weight: bold; }
-#answererName { color: #33a; font-weight: bold; }
-#passMsg { font-weight: bold; color: #555; }
+/* --- iPhone用調整 --- */
+@media screen and (max-width: 500px) {
+  body { font-size: 20px; }
+  h1 { font-size: 32px; }
+  #writingScreen h2,
+  #answererScreen h2 {
+    font-size: 22px;
+  }
+  #writingScreen button,
+  #answererScreen button,
+  #prepareScreen button {
+    font-size: 20px;
+    padding: 10px 16px;
+  }
+}
