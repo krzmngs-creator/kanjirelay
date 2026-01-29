@@ -137,6 +137,7 @@ function showAnswererScreen(){
   document.getElementById("writingScreen").style.display="none";
   const screen = document.getElementById("answererScreen");
   screen.style.display="block";
+
   document.getElementById("answererName").textContent = `${players[answerer]}さんが回答者です！`;
   document.getElementById("passMsg").textContent = `${players[answerer]}さんにスマホを渡してください！`;
   const displayArea = document.getElementById("answererImages");
@@ -179,3 +180,4 @@ document.getElementById("playAgain").addEventListener("click",()=>{
   document.getElementById("answererInfo").textContent=
     `${players[answerer]}さんが回答者です。${players[currentPlayer]}さんにスマホを渡してください！`;
 });
+
