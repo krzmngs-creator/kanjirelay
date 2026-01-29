@@ -6,49 +6,51 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <h1>漢字リレー</h1>
 
-  <!-- 1. 人数選択 -->
-  <label>人数：
-    <select id="numPlayers">
-      <option value="2" selected>2</option>
-      <option value="3">3</option>
-      <option value="4">4</option>
-    </select>
-  </label>
+<h1>漢字リレー</h1>
 
-  <!-- 1. 名前入力 -->
+<!-- --- 準備画面 --- -->
+<div id="prepareScreen">
+  <label for="numPlayers">人数を選択：</label>
+  <select id="numPlayers">
+    <option value="2">2名</option>
+    <option value="3">3名</option>
+    <option value="4">4名</option>
+  </select>
+
   <div id="nameInputs"></div>
   <button id="startGame">スタート</button>
 
-  <!-- 3. 誰が回答者か表示 -->
-  <div id="prepareScreen" style="display:none">
-    <h2 id="answererInfo"></h2>
-    <button id="goToWriting">スタート</button>
-  </div>
+  <h2 id="answererInfo"></h2>
+  <button id="goToWriting">スマホを渡して開始</button>
+</div>
 
-  <!-- 4-5. お題とキャンバス -->
-  <div id="writingScreen" style="display:none">
-    <h2 id="turn"></h2>
-    <p id="topic"></p>
-    <div id="timer">10</div>
-    <canvas id="canvas"></canvas>
-    <br>
-    <button id="clearBtn">消す</button>
-    <button id="nextBtn">次の人へ</button>
-  </div>
+<!-- --- 書き手画面 --- -->
+<div id="writingScreen" style="display:none;">
+  <h2 id="turn"></h2>
+  <p id="topic"></p>
+  <div id="timer">10</div>
 
-  <!-- 6. 回答者画面 -->
-  <div id="answererScreen" style="display:none">
-    <h2 id="answererName"></h2>
-    <p id="passMsg"></p>
-    <div id="answererImages"></div>
-    <input type="text" id="answerInput" placeholder="ひらがなで回答">
-    <button id="submitAnswer">回答する</button>
-    <p id="result"></p>
-    <button id="playAgain">もう一度遊ぶ</button>
-  </div>
+  <canvas id="canvas"></canvas>
+  <br>
+  <button id="clearBtn">消す</button>
+  <button id="nextBtn">次へ</button>
+</div>
 
-  <script src="script.js"></script>
+<!-- --- 回答者画面 --- -->
+<div id="answererScreen" style="display:none;">
+  <h2 id="answererName"></h2>
+  <p id="passMsg"></p>
+
+  <div id="answererImages"></div>
+
+  <input type="text" id="answerInput" placeholder="ひらがなで入力">
+  <button id="submitAnswer">回答</button>
+  <p id="result"></p>
+
+  <button id="playAgain">もう一度遊ぶ</button>
+</div>
+
+<script src="script.js"></script>
 </body>
 </html>
