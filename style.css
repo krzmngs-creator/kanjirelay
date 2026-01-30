@@ -1,6 +1,6 @@
 /* --- 全体文字・見やすく --- */
 body {
-  font-size: 22px;
+  font-size: 30px;
   padding: 12px;
   text-align: center; /* ★ 全体中央 */
 }
@@ -118,3 +118,4 @@ input {
     max-width: 130px;
   }
 }
+
