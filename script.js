@@ -11,6 +11,10 @@ let drawing = false;
 let canDraw = true;
 let timeLeft = 10;
 let timerId = null;
+ctx.lineWidth = 6;          // ← 太さ（おすすめ 6〜8）
+ctx.lineCap = "round";     // ← 先端を丸く（重要）
+ctx.lineJoin = "round";    // ← 線のつなぎ目を丸く
+ctx.strokeStyle = "#000";  // 黒（念のため）
 
 // --- ゲーム状態 ---
 let players = [];
@@ -70,8 +74,9 @@ document.getElementById("goToWriting").addEventListener("click",()=>{
 
 // --- キャンバスサイズ ---
 function resizeCanvas(){
-  canvas.width = Math.min(window.innerWidth-20, 400);
-  canvas.height = canvas.width;
+  const size = Math.min(window.innerWidth * 0.98, 520);
+  canvas.width = size;
+  canvas.height = size;
 }
 window.addEventListener("load",resizeCanvas);
 window.addEventListener("resize",resizeCanvas);
@@ -180,4 +185,3 @@ document.getElementById("playAgain").addEventListener("click",()=>{
   document.getElementById("answererInfo").textContent=
     `${players[answerer]}さんが回答者です。${players[currentPlayer]}さんにスマホを渡してください！`;
 });
-
