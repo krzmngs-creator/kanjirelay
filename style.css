@@ -1,7 +1,7 @@
 /* --- 全体文字・見やすく --- */
 body {
   font-size: 30px;
-  padding: 12px;
+  padding: 24px;
   text-align: center; /* ★ 全体中央 */
   background: #FFF6D8; /* クリーム黄色 */
   color: #333;
@@ -31,9 +31,9 @@ h1 {
 #prepareScreen input,
 #prepareScreen button,
 #goToWriting {
-  font-size: 22px;
+  font-size: 30px;
   margin: 8px 0;
-  padding: 12px 16px;
+  padding: 24px 16px;
   text-align: center;
 }
 
@@ -62,6 +62,9 @@ canvas {
   max-height: 450px;
   margin: 12px auto; /* ★ 中央 */
   display: block;
+  background: #FFFFFF;
+  border: 4px dashed #FFADAD; /* やさしいピンク */
+  border-radius: 16px;
 }
 
 /* --- 回答者画面 --- */
@@ -71,6 +74,9 @@ canvas {
 #answererScreen input {
   font-size: 22px;
   text-align: center;
+  border: 4px solid #A0C4FF; /* 水色 */
+  border-radius: 16px;
+  background: #FFFFFF;
 }
 
 /* --- 回答画像3枚を中央並び --- */
@@ -79,6 +85,11 @@ canvas {
   justify-content: center; /* ★ 横中央 */
   gap: 10px;
   flex-wrap: wrap;
+  font-weight: bold;
+  margin-top: 10px;
+  background: #FFFFFF;
+  padding: 8px;
+  border-radius: 20px;
 }
 
 #answererImages img {
