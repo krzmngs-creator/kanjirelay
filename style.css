@@ -1,13 +1,25 @@
 /* --- 全体文字・見やすく --- */
 body {
-  font-size: 22px;       /* 文字をさらに大きく */
+  font-size: 22px;
   padding: 12px;
+  text-align: center; /* ★ 全体中央 */
 }
 
 /* --- タイトル --- */
 h1 {
-  font-size: 36px;       /* タイトル大きめ */
+  font-size: 36px;
   margin-bottom: 20px;
+  display: flex;
+  justify-content: center;
+}
+
+/* --- 各画面を中央配置 --- */
+#prepareScreen,
+#writingScreen,
+#answererScreen {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* ★ 中央 */
 }
 
 /* --- 準備画面（人数選択・名前入力・ボタン） --- */
@@ -19,6 +31,7 @@ h1 {
   font-size: 22px;
   margin: 8px 0;
   padding: 12px 16px;
+  text-align: center;
 }
 
 /* --- 書き手画面 --- */
@@ -26,6 +39,7 @@ h1 {
 #writingScreen p,
 #writingScreen button {
   font-size: 22px;
+  text-align: center;
 }
 
 #timer {
@@ -39,11 +53,12 @@ canvas {
   border: 3px solid #333;
   touch-action: none;
   cursor: crosshair;
-  width: 95vw;    /* 画面幅の95% */
-  height: 95vw;   /* 正方形 */
+  width: 95vw;
+  height: 95vw;
   max-width: 450px;
   max-height: 450px;
-  margin-bottom: 12px;
+  margin: 12px auto; /* ★ 中央 */
+  display: block;
 }
 
 /* --- 回答者画面 --- */
@@ -52,32 +67,52 @@ canvas {
 #answererScreen button,
 #answererScreen input {
   font-size: 22px;
+  text-align: center;
+}
+
+/* --- 回答画像3枚を中央並び --- */
+#answererImages {
+  display: flex;
+  justify-content: center; /* ★ 横中央 */
+  gap: 10px;
+  flex-wrap: wrap;
 }
 
 #answererImages img {
-  width: 40vw;   /* 画面幅に応じて大きく */
+  width: 40vw;
   max-width: 120px;
   margin: 6px;
+}
+
+/* --- 入力欄を中央＆幅広に --- */
+input {
+  width: 80vw;
+  max-width: 320px;
+  text-align: center;
 }
 
 /* --- iPhone用調整 --- */
 @media screen and (max-width: 500px) {
   body { font-size: 24px; }
   h1 { font-size: 40px; }
+
   #writingScreen h2,
   #answererScreen h2 {
     font-size: 26px;
   }
-  #writingScreen button,
-  #answererScreen button,
-  #prepareScreen button {
+
+  button,
+  select,
+  input {
     font-size: 24px;
     padding: 14px 20px;
   }
+
   canvas {
     width: 97vw;
     height: 97vw;
   }
+
   #answererImages img {
     width: 45vw;
     max-width: 130px;
