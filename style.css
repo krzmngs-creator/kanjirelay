@@ -53,7 +53,6 @@ h1 {
 
 /* --- キャンバス --- */
 canvas {
-  background: #FFFFFF;
   border: 3px solid #333;
   touch-action: none;
   cursor: crosshair;
@@ -63,6 +62,7 @@ canvas {
   max-height: 450px;
   margin: 12px auto; /* ★ 中央 */
   display: block;
+  background: #FFFFFF;
   border: 4px dashed #FFADAD; /* やさしいピンク */
   border-radius: 16px;
 }
@@ -81,22 +81,22 @@ canvas {
 
 /* --- 回答画像3枚を中央並び --- */
 #answererImages {
-  display: flex;
-  justify-content: center; /* ★ 横中央 */
+   display: flex;
+  justify-content: center;
   gap: 10px;
-  flex-wrap: wrap;
-  font-weight: bold;
-  margin-top: 10px;
-  background: #FFFFFF;
-  padding: 8px;
-  border-radius: 20px;
+  flex-wrap: nowrap;   /* ★ 折り返し禁止（超重要） */
 }
 
 #answererImages img {
-  width: 40vw;
-  max-width: 120px;
-  margin: 6px;
+  width: 28vw;          /* ★ 3枚横並び用 */
+  max-width: 140px;
+  background: #FFFFFF;
+  padding: 6px;
+  border-radius: 20px;
+  border: 4px solid #FFD166;
+  box-shadow: 0 6px 0 #F4A261;
 }
+
 
 /* --- 入力欄を中央＆幅広に --- */
 input {
@@ -132,4 +132,3 @@ input {
     max-width: 130px;
   }
 }
-
