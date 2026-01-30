@@ -53,6 +53,7 @@ h1 {
 
 /* --- キャンバス --- */
 canvas {
+  background: #FFFFFF;
   border: 3px solid #333;
   touch-action: none;
   cursor: crosshair;
@@ -62,7 +63,6 @@ canvas {
   max-height: 450px;
   margin: 12px auto; /* ★ 中央 */
   display: block;
-  background: #FFFFFF;
   border: 4px dashed #FFADAD; /* やさしいピンク */
   border-radius: 16px;
 }
@@ -132,3 +132,4 @@ input {
     max-width: 130px;
   }
 }
+
