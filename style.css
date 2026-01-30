@@ -3,6 +3,8 @@ body {
   font-size: 30px;
   padding: 12px;
   text-align: center; /* ★ 全体中央 */
+  background: #FFF6D8; /* クリーム黄色 */
+  color: #333;
 }
 
 /* --- タイトル --- */
@@ -11,6 +13,7 @@ h1 {
   margin-bottom: 20px;
   display: flex;
   justify-content: center;
+  color: #FF7A59; /* オレンジ */
 }
 
 /* --- 各画面を中央配置 --- */
@@ -118,4 +121,3 @@ input {
     max-width: 130px;
   }
 }
-
